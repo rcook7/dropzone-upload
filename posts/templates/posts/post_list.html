@@ -1,0 +1,10 @@
+{% extends "posts/base.html" %}
+{% load static %}
+
+{% block content %}
+    <h1>Posts</h1>
+    <a href="{% url 'posts:create' %}">Add New</a>
+    {% for post in object_list %}
+        <h2><a href="{% url 'posts:detail' post.id %}">{{ post.name }}</a></h2>
+    {% endfor %}
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends "posts/base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+    <h1>Create post</h1>
+    <a class="back" href="{% url 'posts:list' %}">Back</a>
+    <form id="postCreateForm" enctype="multipart/form-data" method="post" action="{% url 'posts:create' %}">
+        {% csrf_token %}
+        <p><label>Title: </label><input id="title" type="text" name="title" required/></p>
+        <div id="dropzone" class="dropzone"></div>
+        <button type="submit">Create</button>
+    </form>
+    <script src="{% static 'js/dropzone.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+{% endblock %}

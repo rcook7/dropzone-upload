@@ -1,0 +1,19 @@
+{% load staticfiles %}
+
+<html>
+    <head>    
+        <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}" />
+        <link rel="stylesheet" href="{% static 'css/dropzone.css' %}">
+        <title>Django Dropzone</title>
+    </head>
+    <body>
+        <div class="content container">
+            <div class="row">
+                <div class="col-md-8">
+                {% block content %}
+                {% endblock %}
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

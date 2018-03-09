@@ -1,0 +1,12 @@
+{% extends "posts/base.html" %}
+{% load static %}
+
+{% block content %}
+    <a href="{% url 'posts:list' %}">Back</a>
+    <div class="post">
+        <h2>{{ post.name }}</h2>
+        {% for img in post.postimage_set.all %}
+            <img src="{% static img.imgName %}" alt="" />
+        {% endfor %}
+    </div>
+{% endblock %}
